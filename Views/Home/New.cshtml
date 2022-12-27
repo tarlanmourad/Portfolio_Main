@@ -1,0 +1,18 @@
+﻿@model Portfolio_Main.Models.EntityFramework.ToDoList
+@{
+    ViewBag.Title = "New";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<div class="container" style="margin-bottom:1000px">
+    @using (Html.BeginForm("New", "Home", FormMethod.Post))
+    {
+        <div class="container" style="margin-top: 40px">
+            @Html.LabelFor(m => m.Task, new { @style = "font-size: 20px" })
+            @Html.TextBoxFor(m => m.Task, new { @class = "light-blue-text" })
+            @Html.HiddenFor(m => m.ID)
+            <button type="submit" class="btn">Accept</button>
+        </div>
+    }
+</div>
+
